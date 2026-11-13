@@ -1,0 +1,65 @@
+"use client";
+
+import * as React from "react";
+import { Header, type HeaderBrandBadge } from "@subboost/ui/components/layout/header";
+import { SUBBOOST_SITE_NAME } from "@subboost/ui/brand";
+
+type LatestReleaseStatus = {
+  hasUpdate?: unknown;
+  latestTag?: unknown;
+  releaseUrl?: unknown;
+};
+
+function readString(value: unknown): string | null {
+  if (typeof value !== "string") return null;
+  const normalized = value.trim();
+  return normalized.length > 0 ? normalized : null;
+}
+
+function buildNewReleaseBadge(status: LatestReleaseStatus | null): HeaderBrandBadge | null {
+  if (status?.hasUpdate !== true) return null;
+  const releaseUrl = readString(status.releaseUrl);
+  if (!releaseUrl) return null;
+
+  const latestTag = readString(status.latestTag);
+  return {
+    label: "new",
+    href: releaseUrl,
+    external: true,
+    title: latestTag ? `${SUBBOOST_SITE_NAME} ${latestTag} 已发布` : `${SUBBOOST_SITE_NAME} 有新版本`,
+    ariaLabel: latestTag ? `${SUBBOOST_SITE_NAME} ${latestTag} 已发布` : `${SUBBOOST_SITE_NAME} 有新版本`,
+  };
+}
+
+export function LocalHeader() {
+  const [newReleaseBadge, setNewReleaseBadge] = React.useState<HeaderBrandBadge | null>(null);
+
+  React.useEffect(() => {
+    const controller = new AbortController();
+    let active = true;
+
+    void (async () => {
+      try {
+        const response = await fetch("/api/releases/latest", {
+          cache: "no-store",
+          headers: { "Cache-Control": "no-cache" },
+          signal: controller.signal,
+        });
+        if (!response.ok) return;
+
+        const status = (await response.json().catch(() => null)) as LatestReleaseStatus | null;
+        if (active) setNewReleaseBadge(buildNewReleaseBadge(status));
+      } catch (error) {
+        if (error instanceof DOMException && error.name === "AbortError") return;
+        if (active) setNewReleaseBadge(null);
+      }
+    })();
+
+    return () => {
+      active = false;
+      controller.abort();
+    };
+  }, []);
+
+  return <Header mode="local" extraBrandBadge={newReleaseBadge} />;
+}

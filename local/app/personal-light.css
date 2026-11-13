@@ -1,0 +1,331 @@
+/* The personal Cloudflare edition uses a warm cream palette with cocoa ink. */
+html.personal-light {
+  color-scheme: light;
+  --background: #fffaf0;
+  --foreground: #3d2f1e;
+  --primary: #a8620c;
+  --primary-hover: #8f5209;
+  --card: #ffffff;
+  --card-hover: #fff7e8;
+  --border: #f0e0c4;
+  --muted: #7a6142;
+
+  /* Existing white-alpha utilities become readable ink and soft ink tints. */
+  --color-white: #3d2f1e;
+  --color-dark: #fffaf0;
+  --color-dark-50: #ffffff;
+  --color-dark-100: #fff7e8;
+  --color-dark-200: #f0e0c4;
+  --color-dark-300: #e6d3b3;
+  --color-dark-400: #a08a63;
+  --color-dark-500: #7a6142;
+  --color-dark-600: #64502f;
+  --color-dark-700: #55432a;
+  --color-dark-800: #46371f;
+  --color-dark-900: #3d2f1e;
+
+  --color-primary-100: #fdf1dc;
+  --color-primary-200: #8f5209;
+  --color-primary-300: #8f5209;
+  --color-primary-400: #d9a355;
+  --color-primary-500: #c98a1f;
+  --color-primary-600: #9a5a08;
+  --color-indigo-100: #8f5209;
+  --color-indigo-200: #8f5209;
+  --color-indigo-300: #8f5209;
+  --color-indigo-400: #b06a0d;
+  --color-indigo-500: #c98a1f;
+  --color-indigo-600: #9a5a08;
+  --color-purple-600: #8f5209;
+  --color-amber-100: #8d5415;
+  --color-amber-200: #8d5415;
+  --color-amber-300: #a7661a;
+  --color-amber-400: #a7661a;
+  --color-yellow-300: #8d5415;
+  --color-yellow-400: #8d5415;
+  --color-red-200: #b1324c;
+  --color-red-300: #b1324c;
+  --color-red-400: #b1324c;
+  --color-rose-100: #b1324c;
+  --color-rose-200: #b1324c;
+  --color-rose-300: #b1324c;
+  --color-rose-400: #b1324c;
+  --color-green-200: #08745c;
+  --color-green-300: #08745c;
+  --color-green-400: #08745c;
+  --color-emerald-100: #08745c;
+  --color-emerald-200: #08745c;
+  --color-emerald-300: #08745c;
+  --color-emerald-400: #08745c;
+  --color-sky-100: #196a9b;
+  --color-sky-300: #196a9b;
+  --color-sky-400: #196a9b;
+  --color-blue-200: #196a9b;
+  --color-blue-300: #196a9b;
+  --color-violet-200: #6d45af;
+}
+
+html.personal-light body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+html.personal-light .bg-gradient-radial {
+  background:
+    radial-gradient(ellipse 65% 38% at 48% 0%, rgba(236, 180, 92, .22), transparent 76%),
+    radial-gradient(ellipse 36% 34% at 94% 24%, rgba(246, 214, 146, .18), transparent 85%),
+    #fffaf0;
+}
+
+html.personal-light .glass-card,
+html.personal-light .glass-card-hover,
+html.personal-light [class~="bg-[#141414]"],
+html.personal-light [class~="bg-[#1a1a1a]"] {
+  background-color: rgba(255, 255, 255, .94);
+  border-color: #f0e0c4;
+  box-shadow: 0 10px 30px rgba(122, 84, 26, .07);
+}
+
+html.personal-light .glass-card-hover:hover {
+  background-color: #fffaf2;
+  border-color: #e8c98d;
+}
+
+html.personal-light .personal-login-card {
+  background: #fff;
+  border-color: #f0e0c4;
+  box-shadow: 0 24px 55px rgba(122, 84, 26, .10);
+}
+
+html.personal-light [class~="bg-black/50"] {
+  background-color: rgba(255, 255, 255, .86);
+  border-color: #f2e4c9;
+  box-shadow: 0 4px 20px rgba(122, 84, 26, .06);
+}
+
+html.personal-light .text-gradient {
+  background-image: linear-gradient(95deg, #6b4a1d, #b06a0d 68%, #dca352);
+}
+
+html.personal-light .cloudflare-badge,
+html.personal-light .edition-eyebrow {
+  border: 1px solid #f0cf9b;
+  background: #fdf0d8;
+  color: #8a5407;
+  box-shadow: 0 3px 12px rgba(168, 98, 12, .10);
+}
+
+html.personal-light .edition-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: .25rem .7rem;
+  margin-bottom: .45rem;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+html.personal-light .btn-primary {
+  background: #a8620c;
+  border-color: #a8620c;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(168, 98, 12, .22);
+}
+
+html.personal-light .btn-primary:hover {
+  background: #8f5209;
+  border-color: #8f5209;
+}
+
+html.personal-light :is(button, a)[class~="bg-primary-500/20"] {
+  background-color: #a8620c;
+  border-color: #a8620c;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(168, 98, 12, .22);
+}
+
+html.personal-light :is(button, a)[class~="bg-primary-500/20"]:hover {
+  background-color: #8f5209;
+  border-color: #8f5209;
+}
+
+html.personal-light button[class~="bg-red-500/20"] {
+  background-color: #b1324c;
+  border-color: #b1324c;
+  color: #fff;
+}
+
+html.personal-light button[class~="bg-red-500/20"]:hover {
+  background-color: #982840;
+}
+
+html.personal-light .input-base,
+html.personal-light input,
+html.personal-light textarea,
+html.personal-light select {
+  color-scheme: light;
+}
+
+html.personal-light .input-base {
+  background: #fff;
+  border-color: #e8d6b8;
+  color: #3d2f1e;
+}
+
+html.personal-light input[type="date"] {
+  color-scheme: light;
+  -webkit-text-fill-color: #3d2f1e;
+}
+
+html.personal-light input[type="date"]::-webkit-datetime-edit,
+html.personal-light input[type="date"]::-webkit-datetime-edit-text,
+html.personal-light input[type="date"]::-webkit-datetime-edit-month-field,
+html.personal-light input[type="date"]::-webkit-datetime-edit-day-field,
+html.personal-light input[type="date"]::-webkit-datetime-edit-year-field {
+  color: #3d2f1e;
+}
+
+html.personal-light ::selection {
+  background: #f6dfb0;
+  color: #3d2f1e;
+}
+
+/* Pale text designed for dark cards needs stronger color on paper. */
+html.personal-light [class~="text-white/25"],
+html.personal-light [class~="text-white/30"],
+html.personal-light [class~="text-white/35"],
+html.personal-light [class~="text-white/40"],
+html.personal-light [class~="text-white/45"],
+html.personal-light [class~="text-white/50"],
+html.personal-light [class~="text-white/55"],
+html.personal-light [class~="placeholder:text-white/40"]::placeholder {
+  color: #7a6142;
+}
+
+html.personal-light [class~="text-white/60"],
+html.personal-light [class~="text-white/65"],
+html.personal-light [class~="text-white/70"],
+html.personal-light [class~="text-white/75"],
+html.personal-light [class~="text-white/80"],
+html.personal-light [class~="text-white/85"],
+html.personal-light [class~="text-white/90"] {
+  color: #6b5540;
+}
+
+html.personal-light [class~="hover:text-white/60"]:hover,
+html.personal-light [class~="hover:text-white/70"]:hover {
+  color: #4a3a24;
+}
+
+html.personal-light [class~="bg-white"] {
+  background-color: #fff;
+}
+
+html.personal-light [class~="from-indigo-500"][class~="to-purple-600"] [class~="text-white"] {
+  color: #fff;
+}
+
+html.personal-light [class~="bg-black/90"],
+html.personal-light [class~="bg-black/95"] {
+  background-color: #fff;
+  border: 1px solid #f0e0c4;
+  box-shadow: 0 12px 30px rgba(122, 84, 26, .15);
+}
+
+html.personal-light [class~="text-indigo-100"],
+html.personal-light [class~="text-indigo-200"],
+html.personal-light [class~="text-indigo-300"],
+html.personal-light [class~="text-indigo-400"],
+html.personal-light [class~="text-primary-200"] { color: #8f5209; }
+
+html.personal-light [class~="text-amber-100"],
+html.personal-light [class~="text-amber-200"],
+html.personal-light [class~="text-amber-300"],
+html.personal-light [class~="text-amber-400"],
+html.personal-light [class~="text-yellow-300"],
+html.personal-light [class~="text-yellow-400"] { color: #8d5415; }
+
+html.personal-light [class~="text-red-200"],
+html.personal-light [class~="text-red-300"],
+html.personal-light [class~="text-red-400"],
+html.personal-light [class~="text-rose-100"],
+html.personal-light [class~="text-rose-200"],
+html.personal-light [class~="text-rose-300"],
+html.personal-light [class~="text-rose-400"] { color: #b1324c; }
+
+html.personal-light [class~="text-green-200"],
+html.personal-light [class~="text-green-300"],
+html.personal-light [class~="text-green-400"],
+html.personal-light [class~="text-emerald-100"],
+html.personal-light [class~="text-emerald-200"],
+html.personal-light [class~="text-emerald-300"],
+html.personal-light [class~="text-emerald-400"] { color: #08745c; }
+
+html.personal-light [class~="text-sky-100"],
+html.personal-light [class~="text-sky-300"],
+html.personal-light [class~="text-sky-400"],
+html.personal-light [class~="text-blue-200"],
+html.personal-light [class~="text-blue-300"] { color: #196a9b; }
+
+/* Protocol labels need darker ink on the light node rows. */
+html.personal-light .protocol-badge {
+  background-color: #f0ead9;
+  border-color: #ddd0b8;
+  color: #55432c;
+  font-weight: 600;
+}
+
+html.personal-light .protocol-badge:is([data-protocol="ss"], [data-protocol="ssr"]) {
+  background-color: #e2edfc;
+  border-color: #b8d1ef;
+  color: #245b89;
+}
+
+html.personal-light .protocol-badge:is([data-protocol="vmess"], [data-protocol="relay"]) {
+  background-color: #eee5fa;
+  border-color: #d6bfe9;
+  color: #6b3d96;
+}
+
+html.personal-light .protocol-badge[data-protocol="vless"] {
+  background-color: #dff3eb;
+  border-color: #addfc9;
+  color: #08644f;
+}
+
+html.personal-light .protocol-badge[data-protocol="trojan"] {
+  background-color: #fde6e9;
+  border-color: #f0bdc7;
+  color: #9c3047;
+}
+
+html.personal-light .protocol-badge[data-protocol="anytls"] {
+  background-color: #dff2f1;
+  border-color: #b7dedd;
+  color: #17676b;
+}
+
+html.personal-light .protocol-badge:is([data-protocol="hysteria2"], [data-protocol="hy2"]) {
+  background-color: #fff0d8;
+  border-color: #f0cf9b;
+  color: #85500f;
+}
+
+html.personal-light .protocol-badge[data-protocol="tuic"] {
+  background-color: #e0f1f8;
+  border-color: #b7d9e9;
+  color: #176586;
+}
+
+html.personal-light .protocol-badge:is([data-protocol="http"], [data-protocol="https"]) {
+  background-color: #fff1d9;
+  border-color: #ebd09f;
+  color: #80500d;
+}
+
+html.personal-light .protocol-badge[data-protocol="ssh"] {
+  background-color: #fbe5f0;
+  border-color: #efbfd7;
+  color: #963562;
+}
